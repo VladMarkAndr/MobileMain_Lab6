@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tab Keeper — Settings</title>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-brand">
+            <span style="font-size: 1.25rem;">⚙️</span>
+            <span>Preferences & Settings</span>
+        </div>
+        <a href="dashboard.html" style="font-size: 0.85rem; color: #818cf8;">← Back</a>
+    </header>
+
+    <main class="app-main">
+        <div class="dashboard-hero-card">
+            <h3>Profile Information</h3>
+            <div class="form-group-dark" style="margin-top: 1rem;">
+                <label>Full Name</label>
+                <input type="text" id="setting-name" value="Sarah Connor">
+            </div>
+            <div class="form-group-dark">
+                <label>Email Address</label>
+                <input type="email" id="setting-email" value="sarah@launch.com">
+            </div>
+            <button id="save-settings" class="btn-indigo" style="width: auto; padding: 0.6rem 1.25rem;">Save Preferences</button>
+        </div>
+
+        <div class="dashboard-hero-card">
+            <h3>Appearance & Sync</h3>
+            <label style="display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.9rem;">
+                <input type="checkbox" checked id="pref-sync"> Enable Cloud Synchronization
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; margin-top: 0.75rem; font-size: 0.9rem;">
+                <input type="checkbox" checked id="pref-counts"> Show Badge Counters
+            </label>
+        </div>
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="mobile-nav-item">
+            <span>📊</span> Dashboard
+        </a>
+        <a href="settings.html" class="mobile-nav-item active">
+            <span>⚙️</span> Preferences
+        </a>
+    </nav>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

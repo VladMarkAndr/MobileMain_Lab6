@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tab Keeper — Dashboard</title>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-brand">
+            <span style="font-size: 1.25rem;">🗂️</span>
+            <div>
+                <div style="font-size: 0.95rem;">Tab Keeper</div>
+                <div class="sync-badge">Sync Active</div>
+            </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <a href="settings.html" style="background: #1e293b; padding: 0.5rem; border-radius: 0.5rem; color: #94a3b8;">⚙️</a>
+            <a href="index.html" style="background: rgba(239, 68, 68, 0.15); padding: 0.5rem; border-radius: 0.5rem; color: #f87171;">🚪</a>
+        </div>
+    </header>
+
+
+    <main class="app-main">
+        <section class="dashboard-hero-card">
+            <div>
+                <h2 style="margin: 0 0 0.25rem 0; font-size: 1.25rem;">Saved Tabs & Tasks Dashboard</h2>
+                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;">Manage your active sessions and saved URLs grouped by category</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                <button id="btn-open-modal" class="btn-indigo" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: auto;">+ Save New Tab</button>
+            </div>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <input type="text" id="search-input" class="search-input" placeholder="Search tabs or notes...">
+            <div class="filters-row" id="filters-container">
+                <button class="filter-pill active" data-filter="all">All Items</button>
+                <button class="filter-pill" data-filter="Work">Work</button>
+                <button class="filter-pill" data-filter="Research">Research</button>
+                <button class="filter-pill" data-filter="Personal">Personal</button>
+            </div>
+        </section>
+
+        <section class="notes-grid" id="notes-grid">
+
+        </section>
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="mobile-nav-item active">
+            <span>📊</span> Dashboard
+        </a>
+        <a href="settings.html" class="mobile-nav-item">
+            <span>⚙️</span> Preferences
+        </a>
+    </nav>
+
+    <div id="modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div>
+                    <h3 style="margin: 0; font-size: 1.15rem;">Create a new tab</h3>
+                    <p style="margin: 0; font-size: 0.75rem; color: #94a3b8;">Add a focused space for related tasks and ideas.</p>
+                </div>
+                <button id="modal-close" style="background: none; color: #94a3b8; font-size: 1.25rem; cursor: pointer;">✕</button>
+            </div>
+
+            <form id="create-note-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="form-group-dark">
+                    <label>Tab Name</label>
+                    <input type="text" id="modal-title" required placeholder="Marketing Campaign">
+                </div>
+
+                <div class="form-group-dark">
+                    <label>URL Link</label>
+                    <input type="url" id="modal-url" required placeholder="https://example.com">
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Category / Workspace</label>
+                    <select id="modal-category" style="background-color: #0b0f19; border: 1px solid #1e293b; border-radius: 0.5rem; padding: 0.75rem; color: #fff; width: 100%;">
+                        <option value="Work">Work</option>
+                        <option value="Research">Research</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Description (Optional)</label>
+                    <input type="text" id="modal-desc" placeholder="Brief note description...">
+                </div>
+
+                <div>
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Icon <span style="font-weight: 400; color: #64748b;">Optional</span></label>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.35rem;" id="icon-selector">
+                        <button type="button" class="icon-btn active" data-icon="📁">📁</button>
+                        <button type="button" class="icon-btn" data-icon="🚀">🚀</button>
+                        <button type="button" class="icon-btn" data-icon="🎯">🎯</button>
+                        <button type="button" class="icon-btn" data-icon="💡">💡</button>
+                        <button type="button" class="icon-btn" data-icon="🛠️">🛠️</button>
+                    </div>
+                </div>
+
+                <div style="background-color: #0b0f19; border: 1px solid #1e293b; border-radius: 0.5rem; padding: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <span id="preview-icon" style="font-size: 1.25rem;">📁</span>
+                    <div>
+                        <div id="preview-title" style="font-size: 0.85rem; font-weight: 600;">Marketing Campaign</div>
+                        <div style="font-size: 0.7rem; color: #94a3b8;">0 tasks · Ready to organize</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+                    <button type="button" id="modal-cancel" class="btn-indigo" style="background: #1e293b; color: #cbd5e1;">Cancel</button>
+                    <button type="submit" class="btn-indigo">+ Create tab</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

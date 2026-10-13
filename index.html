@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tab Keeper — Авторизация</title>
+</head>
+<body>
+    <main class="auth-page-wrapper">
+        <section class="auth-card">
+            <div class="auth-logo-icon">🗂️</div>
+            <h1>Tab Keeper</h1>
+            <p>Organize tabs, notes, and workflows effortlessly</p>
+
+            <div class="auth-tabs-toggle">
+                <button class="auth-tab-btn active" id="tab-signin">Sign In</button>
+                <button class="auth-tab-btn" id="tab-signup">Sign Up</button>
+            </div>
+
+            <form id="auth-form" style="width: 100%;">
+                <div class="form-group-dark">
+                    <label>Email Address</label>
+                    <input type="email" id="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group-dark">
+                    <label>Password</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-indigo" style="margin-top: 0.5rem;" id="submit-btn">Sign In to Dashboard</button>
+            </form>
+
+            <div style="margin-top: 1.5rem;">
+                <a href="dashboard.html" id="demo-bypass" style="font-size: 0.8rem; color: #818cf8; text-decoration: underline;">
+                    Quick Demo Bypass →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

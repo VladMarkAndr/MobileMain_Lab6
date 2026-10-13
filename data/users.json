@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Sarah Connor",
+      "email": "sarah@launch.com",
+      "password": "password123"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "category": "Research",
+      "title": "Doc",
+      "url": "http://127.0.0.1:5500/tab_keeper.html",
+      "description": "Important!!!",
+      "urgent": true
+    },
+    {
+      "id": 2,
+      "category": "Work",
+      "title": "Tab Keeper",
+      "url": "http://127.0.0.1:5500/dashboard.html",
+      "description": "Captured live session window.",
+      "urgent": false
+    },
+    {
+      "id": 3,
+      "category": "Work",
+      "title": "Google Gemini AI Studio",
+      "url": "https://aistudio.google.com",
+      "description": "API key generation and prompt testing environment.",
+      "urgent": false
+    },
+    {
+      "id": 4,
+      "category": "Research",
+      "title": "Tailwind CSS Documentation",
+      "url": "https://tailwindcss.com",
+      "description": "Check flexbox and responsive utility classes.",
+      "urgent": false
+    },
+    {
+      "id": 5,
+      "category": "Personal",
+      "title": "Personal Expense Tracker",
+      "url": "https://example.com/finance",
+      "description": "Monthly budget breakdown.",
+      "urgent": false
+    }
+  ]
+}
